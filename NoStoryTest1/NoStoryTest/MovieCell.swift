@@ -11,11 +11,12 @@ class MovieCell: UITableViewCell {
     
     lazy var titleLabel:UILabel = {
        let label = UILabel()
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    lazy var movieImage:UIImageView = {
+    private lazy var movieImage:UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -23,22 +24,28 @@ class MovieCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier:String?){
         super.init(style:style,reuseIdentifier: reuseIdentifier)
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupLayout(){
+    func conf(movie:MovieTitle){
+        titleLabel.text = movie.titleLabel
+        movieImage.image = movie.image
+    }
+    
+    private func setupLayout(){
         let movieStackView = UIStackView(arrangedSubviews: [movieImage,titleLabel])
         movieStackView.translatesAutoresizingMaskIntoConstraints = false
         movieStackView.axis = .vertical
-        movieStackView.addSubview(movieStackView)
+        contentView.addSubview(movieStackView)
         NSLayoutConstraint.activate([
-            movieStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            movieStackView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 10),
             movieStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            movieStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            movieStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+            movieStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant:-30),
+            movieStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant:30)
         ])
     }
     
@@ -50,7 +57,7 @@ class MovieCell: UITableViewCell {
     
 }
 
-extension UITableView{
+extension UITableViewCell{
     static var identifier:String{
         return String(describing: self)
     }

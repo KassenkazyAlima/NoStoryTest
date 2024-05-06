@@ -12,13 +12,13 @@ class ViewController: UIViewController {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+//      tableView.backgroundColor = .clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.rowHeight = 500
-        tableView.separatorStyle = .none
-        tableView.register(MovieCell.self, forCellReuseIdentifier: MovieCell.identifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "identifier")
         return tableView
     }()
-    var dataSource: [MovieTitle] = Array(repeating: MovieTitle(titleLabel: "Uncharted", image: UIImage(named: "movie")), count: 10)
+    var dataSource = ["John","Maria","Tom","Ben"]
+    var dataSource2 = ["Karen","Nestrol", "Maxiene","Lanuan"]
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -47,18 +47,12 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.identifier, for: indexPath) as! MovieCell
-        let movie = dataSource[indexPath.row]
-        cell.conf(movie:movie)
-        
-        
-        
-        
-//        cell.textLabel?.text = dataSource[indexPath.row]
-//        var content = cell.defaultContentConfiguration()
-//        content.text = dataSource[indexPath.row]
-//        content.secondaryText = dataSource2[indexPath.row]
-//        cell.contentConfiguration = content
+        let cell = tableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath)
+        cell.textLabel?.text = dataSource[indexPath.row]
+        var content = cell.defaultContentConfiguration()
+        content.text = dataSource[indexPath.row]
+        content.secondaryText = dataSource2[indexPath.row]
+        cell.contentConfiguration = content
         return cell
     }
     

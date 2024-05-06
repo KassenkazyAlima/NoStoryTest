@@ -13,6 +13,7 @@
 		60E4E8B82BDD517200095306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60E4E8B72BDD517200095306 /* Assets.xcassets */; };
 		60E4E8BB2BDD517200095306 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E4E8B92BDD517200095306 /* LaunchScreen.storyboard */; };
 		BEAEE1C12BE9241400BF754C /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAEE1C02BE9241400BF754C /* MovieCell.swift */; };
+		BEAEE1C32BE92AF600BF754C /* MovieTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAEE1C22BE92AF600BF754C /* MovieTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		60E4E8BA2BDD517200095306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60E4E8BC2BDD517200095306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEAEE1C02BE9241400BF754C /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		BEAEE1C22BE92AF600BF754C /* MovieTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				60E4E8B92BDD517200095306 /* LaunchScreen.storyboard */,
 				60E4E8BC2BDD517200095306 /* Info.plist */,
 				BEAEE1C02BE9241400BF754C /* MovieCell.swift */,
+				BEAEE1C22BE92AF600BF754C /* MovieTitle.swift */,
 			);
 			path = NoStoryTest;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEAEE1C32BE92AF600BF754C /* MovieTitle.swift in Sources */,
 				60E4E8B32BDD517000095306 /* ViewController.swift in Sources */,
 				60E4E8AF2BDD517000095306 /* AppDelegate.swift in Sources */,
 				BEAEE1C12BE9241400BF754C /* MovieCell.swift in Sources */,
